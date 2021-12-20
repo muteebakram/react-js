@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<script>
+    // single threaded
+    console.log("Hi")
+    console.log("whats up")
+
+    // multi thread using callback
+    // Browser pushes the instruction onto separate
+    // thread which is responsible for multi thread not js
+    // This line is pushed back to stack once stack is free to process.
+    setTimeout(() => {
+        console.log("How are you?")
+    }, 100000);
+
+    // This lines runs on single threaded
+    // Note all this sync operations needs to be completed then only async starts.
+    console.log("Bye")
+    console.log("Bye")
+    console.log("Bye")
+    console.log("Bye")
+    console.log("Bye")
+    console.log("Bye")
+    
+    // Inner callback is 2secs started after 1 sec outer callback
+    setTimeout(() => {
+        console.log("Time start")
+        setTimeout(() => {
+            console.log("Done")
+        }, 2000);
+    }, 1000);
+
+    // output
+    // runtime.html:4 Hi
+    // runtime.html:6 whats up
+    // runtime.html:12 Bye
+    // runtime.html:10 How are you?
+</script>
+
+</html>

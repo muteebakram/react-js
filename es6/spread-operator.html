@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const product = { id: 123, name: "test", price: 12999 };
+        const cart = [product]
+        cart[0].qty = 2;
+        console.log("Cart:", cart);
+        // Here we only changed cart but product is also changed. The problem is in JS itself.
+        // change in one problem is reflected to all its previous states.
+        // To solve this always use immutability ie spread operator.
+        console.log("Product:", product);
+
+        // spread operator : ...
+        const product2 = { id: 123, name: "test", price: 12999 };
+        const cart2 = [
+            { ...product2 }, // new ref
+        ];
+        cart2[0].qty = 2;
+        console.log("Cart:", cart2);
+        console.log("Product:", product2);
+    </script>
+</body>

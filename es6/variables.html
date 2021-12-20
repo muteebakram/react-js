@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es6 provided let and const for block scope
+        // var is hoisted scope
+        var a = 10;
+        a = "test";
+        a = true;
+        // Expected
+        for (var i = 0; i < 10; i++) {
+            console.log("Expected", i);
+        }
+        // Problem
+        for (var i = 0; i < 10; i++) {
+            setTimeout(function () {
+                console.log("Problem", i);
+            }, i * 1000);
+        }
+        // es6 soln by allocating 10 different variable
+        for (let i = 0; i < 10; i++) {
+            setTimeout(function () {
+                console.log("ES6", i);
+            }, i * 1000);
+        }
+        // objects and array are mutable by default
+        // keep all your objects immutable
+        const b = { name: "test" }
+        console.log(b);
+        b.name = "muteeb"
+        console.log(b);
+    </script>
+</body>
+
+</html>

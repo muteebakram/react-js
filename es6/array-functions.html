@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const nos = [1, 2, 3, 4, 5, 6];
+        // square of nos [1,4,9,16,25,36]
+        // const square = [];
+        // for (let i = 0; i < nos.length; i++) {
+        //   square.push(nos[i] * nos[i]);
+        // }
+        // map modifies and returns full array
+        const square = nos.map(function (value, index, arr) {
+            // return updated_value
+            return value * value;
+        });
+        console.log(nos, square);
+
+        // filter return some or all elements of array if cond is meet.
+        const even = nos.filter(function (value, index, arr) {
+            // return updated_value
+            // console.log(index, array);
+            if (value % 2 === 0) {
+                return value;
+            }
+        });
+
+        // same but different syntax
+        // const even = nos.filter((value) => value % 2 === 0);
+        console.log(nos, even);
+
+        // use of both filter and map
+        const evenSq = nos.filter((value) => value % 2 === 0).map((v) => v * v);
+        console.log(nos, evenSq);
+    </script>
+</body>
+
+</html>
