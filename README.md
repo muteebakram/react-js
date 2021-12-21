@@ -43,7 +43,7 @@
 4. Each component should have one purpose called SRP.
 5. Component must be in pascal class.
 6. Components segrigation
-   - Smart: Logical part backend API etc. Ex: ProductList - my-app/src/container/ProductList.js
+   - Smart: Logical part state change control, backend API etc. Ex: ProductList - my-app/src/container/ProductList.js
    - Dumb: Presntation how it looks on screen. Ex: Product - my-app/src/components/Product.js
 7. Communication via parent childs relation.
    - Ex: A is parent and BCD are siblings
@@ -53,7 +53,14 @@
        - D
    - B can only communicate to D via A. ie B-A the A-D
 
-### Components
+## Component and PureComponent
+
+PureComponent does not reconsilation whereas Component will do reconsilation.
+PureComponent will not render if no change in specifc prop of state, but will do any change in different prop of state change. Thus did not solve the problem.
+
+Component have the lifecyle hook `shouldComponentUpdate` user can control when to re-render. Refer: my-app/src/Demo.js
+
+## Components
 
 We have two types of components:
 
@@ -68,7 +75,7 @@ Mainly used for SMART components.
 
 ### Function based
 
-They dont have component life cycle. They use React Hooks.
+They dont have component life cycle. They use React Hooks. They are pure component by default.
 
 Mainly used for DUMB components.
 
