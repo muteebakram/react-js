@@ -1,13 +1,13 @@
 import "./App.css";
 import React from "react";
 import Demo from "./Demo";
-import Product from "./components/Product";
+import ProductList from "./container/ProductList";
 
 function App() {
   return (
     <div>
       <Demo></Demo>
-      <Product></Product>
+      <ProductList></ProductList>
     </div>
   );
 }

@@ -43,15 +43,46 @@
 4. Each component should have one purpose called SRP.
 5. Component must be in pascal class.
 6. Components segrigation
-   - Smart: Logical part backend API etc. Ex: ProductList
-   - Dumb: Presntation how it looks on screen. Ex: Product
+   - Smart: Logical part backend API etc. Ex: ProductList - my-app/src/container/ProductList.js
+   - Dumb: Presntation how it looks on screen. Ex: Product - my-app/src/components/Product.js
 7. Communication via parent childs relation.
    - Ex: A is parent and BCD are siblings
      - A
        - B
        - C
        - D
-   - B can only communicat to D via A. ie B-A the A-D
+   - B can only communicate to D via A. ie B-A the A-D
+
+### Components
+
+We have two types of components:
+
+1. Class based (stateful)
+2. Function based (stateless)
+
+#### Class based
+
+They support Component life cycle. ie, mounting, updating, unounting.
+
+Mainly used for SMART components.
+
+### Function based
+
+They dont have component life cycle. They use React Hooks.
+
+Mainly used for DUMB components.
+
+### Props and State
+
+Props and state are integral part of components.
+
+**Props:** Used for data exchange btn comps.
+
+**State:** UI updates or re-rendering.
+
+- Must always be initailized.
+- Should be immutable thus react provides setState
+- **_setState_** keeps state immutable internally and call render internally and updates.
 
 ## Commands
 
