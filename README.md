@@ -91,6 +91,15 @@ Props and state are integral part of components.
 - Should be immutable thus react provides setState
 - **_setState_** keeps state immutable internally and call render internally and updates.
 
+## Controlled and Uncontrolled Components
+
+1. Mainly used for form type components.
+2. Mainly to get SPA (Single Page App) ie to avoid any kinda refresh. Its HTML problem.
+
+More info in: my-app/src/container/CheckOut.js
+
+Suggested to use: <https://formik.org/>
+
 ## Commands
 
 1. Create a react project/app - `npx create-react-app <app-name>`
